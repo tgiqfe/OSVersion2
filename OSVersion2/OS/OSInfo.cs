@@ -65,17 +65,38 @@ namespace OSVersion2.OS
         /// </summary>
         public bool IsEmbedded { get; set; }
 
+        /// <summary>
+        /// Alismeticで判定時に使用するGroup
+        /// </summary>
+        public override string Group { get { return this.OSFamily.ToString(); } }
+
+        /// <summary>
+        /// メジャーバージョン
+        /// </summary>
         public string MajorVersion
         {
             get { return Version.Contains(".") ? Version.Split('.')[0] : Version; }
         }
+
+        /// <summary>
+        /// マイナーバージョン
+        /// </summary>
         public string MinorVersion
         {
             get { return Version.Contains(".") && Version.Split('.').Length > 1 ? Version.Split('.')[1] : Version; }
         }
+
+        /// <summary>
+        /// ビルド番号
+        /// </summary>
         public string BuildVersion
         {
             get { return Version.Contains(".") && Version.Split('.').Length > 2 ? Version.Split('.')[2] : Version; }
+        }
+
+        public string RevisionVersion
+        {
+            get { return Version.Contains(".") && Version.Split('.').Length > 3 ? Version.Split('.')[3] : Version; }
         }
 
         /// <summary>
@@ -91,8 +112,8 @@ namespace OSVersion2.OS
         {
             return string.Format("{0}{1} ver.{2}",
                 Name,
-                Edition == null || Edition == Windows.Edition.None ? 
-                    "" : 
+                Edition == null || Edition == Windows.Edition.None ?
+                    "" :
                     " " + Edition,
                 VersionName);
         }
