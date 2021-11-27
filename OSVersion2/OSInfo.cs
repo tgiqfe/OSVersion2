@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OSVersion2.Windows;
 
-namespace OSVersion2.Windows
+namespace OSVersion2
 {
     internal class OSInfo : Arithmetic
     {
@@ -131,7 +132,7 @@ namespace OSVersion2.Windows
         /// <returns></returns>
         public override string ToString()
         {
-            return this.Name;
+            return $"{Name} {Edition} ver.{VersionName}";
         }
     }
 }

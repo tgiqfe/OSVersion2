@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime;
+using OSVersion2.Windows;
 
-namespace OSVersion2.Windows
+namespace OSVersion2
 {
     internal class OSVersion
     {
+        #region GetCurrent method
+
         /// <summary>
         /// Windows/Mac/Linuxを判定し、それぞれのFind～クラスでのOSInfoチェック
         /// </summary>
@@ -29,5 +32,20 @@ namespace OSVersion2.Windows
             }
             return null;
         }
+
+        #endregion
+        #region GetWindows
+
+        public static OSInfo GetWindows(int osSerial)
+        {
+            return null;
+        }
+
+        public static OSInfo GetWindows(string osName)
+        {
+            return null;
+        }
+
+        #endregion
     }
 }

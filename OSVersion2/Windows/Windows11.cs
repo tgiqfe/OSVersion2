@@ -24,12 +24,11 @@ namespace OSVersion2.Windows
                 {
                     Edition.Home => new DateTime(2023, 10, 10),
                     Edition.Pro => new DateTime(2023, 10, 10),
+                    Edition.ProEducation => new DateTime(2023, 10, 10),
+                    Edition.ProForWorkstations => new DateTime(2023, 10, 10),
                     Edition.Enterprise => new DateTime(2024, 10, 8),
-                    Edition.Eductaino => new DateTime(2024, 10, 8),
-                    Edition.EducationPro => new DateTime(2024, 10, 8),
-                    Edition.EnterpriseLTSB => new DateTime(2024, 10, 8),
-                    Edition.EnterpriseLTSC => null,
-                    _ => DateTime.MinValue,
+                    Edition.Education => new DateTime(2024, 10, 8),
+                    _ => null,
                 },
                 IsServer = false,
                 IsEmbedded = false
