@@ -26,7 +26,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2015, 7, 29),
                     Edition.Enterprise => new DateTime(2015, 7, 29),
                     Edition.Education => new DateTime(2015, 7, 29),
-                    Edition.EducationPro => new DateTime(2015, 7, 29),
+                    Edition.ProEducation => null,
                     Edition.EnterpriseLTSB => new DateTime(2025, 10, 14),
                     Edition.EnterpriseLTSC => null,
                     _ => DateTime.MinValue,
@@ -52,7 +52,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2017, 10, 10),
                     Edition.Enterprise => new DateTime(2018, 4, 10),
                     Edition.Education => new DateTime(2018, 4, 10),
-                    Edition.EducationPro => new DateTime(2018, 4, 10),
+                    Edition.ProEducation => null,
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -78,7 +78,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2018, 4, 10),
                     Edition.Enterprise => new DateTime(2019, 4, 9),
                     Edition.Education => new DateTime(2019, 4, 9),
-                    Edition.EducationPro => new DateTime(2019, 4, 9),
+                    Edition.ProEducation => new DateTime(2019, 4, 9),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => new DateTime(2026, 10, 13),
                     _ => null
@@ -104,7 +104,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2018, 10, 9),
                     Edition.Enterprise => new DateTime(2019, 10, 8),
                     Edition.Education => new DateTime(2019, 10, 8),
-                    Edition.EducationPro => new DateTime(2019, 10, 8),
+                    Edition.ProEducation => new DateTime(2019, 10, 8),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -130,7 +130,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2019, 4, 9),
                     Edition.Enterprise => new DateTime(2020, 10, 13),
                     Edition.Education => new DateTime(2020, 10, 13),
-                    Edition.EducationPro => new DateTime(2020, 10, 13),
+                    Edition.ProEducation => new DateTime(2020, 10, 13),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -156,7 +156,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2019, 11, 12),
                     Edition.Enterprise => new DateTime(2021, 5, 11),
                     Edition.Education => new DateTime(2021, 5, 11),
-                    Edition.EducationPro => new DateTime(2021, 5, 11),
+                    Edition.ProEducation => new DateTime(2021, 5, 11),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -182,7 +182,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2020, 11, 10),
                     Edition.Enterprise => new DateTime(2021, 5, 11),
                     Edition.Education => new DateTime(2021, 5, 11),
-                    Edition.EducationPro => new DateTime(2021, 5, 11),
+                    Edition.ProEducation => new DateTime(2021, 5, 11),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => new DateTime(2029, 1, 9),
                     _ => null
@@ -208,7 +208,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2020, 12, 8),
                     Edition.Enterprise => new DateTime(2020, 12, 8),
                     Edition.Education => new DateTime(2020, 12, 8),
-                    Edition.EducationPro => new DateTime(2020, 12, 8),
+                    Edition.ProEducation => new DateTime(2020, 12, 8),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -234,7 +234,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2021, 5, 11),
                     Edition.Enterprise => new DateTime(2021, 5, 11),
                     Edition.Education => new DateTime(2021, 5, 11),
-                    Edition.EducationPro => new DateTime(2021, 5, 11),
+                    Edition.ProEducation => new DateTime(2021, 5, 11),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -260,7 +260,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2021, 12, 14),
                     Edition.Enterprise => new DateTime(2021, 12, 14),
                     Edition.Education => new DateTime(2021, 12, 14),
-                    Edition.EducationPro => new DateTime(2021, 12, 14),
+                    Edition.ProEducation => new DateTime(2021, 12, 14),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -286,7 +286,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2022, 5, 10),
                     Edition.Enterprise => new DateTime(2023, 5, 9),
                     Edition.Education => new DateTime(2023, 5, 9),
-                    Edition.EducationPro => new DateTime(2023, 5, 9),
+                    Edition.ProEducation => new DateTime(2023, 5, 9),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -312,7 +312,7 @@ namespace OSVersion2.Windows
                     Edition.Pro => new DateTime(2022, 12, 13),
                     Edition.Enterprise => new DateTime(2022, 12, 13),
                     Edition.Education => new DateTime(2022, 12, 13),
-                    Edition.EducationPro => new DateTime(2022, 12, 13),
+                    Edition.ProEducation => new DateTime(2022, 12, 13),
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
@@ -334,11 +334,11 @@ namespace OSVersion2.Windows
                 ReleaseDate = new DateTime(2021, 11, 16),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2023, 5, 16),  //  仮
-                    Edition.Pro => new DateTime(2023, 5, 16),   //  仮
-                    Edition.Enterprise => new DateTime(2024, 11, 16),   //  仮
-                    Edition.Education => new DateTime(2024, 11, 16),    //  仮
-                    Edition.EducationPro => new DateTime(2024, 11, 16), //  仮
+                    Edition.Home => new DateTime(2023, 5, 16),  //  仮(リリースから18カ月)
+                    Edition.Pro => new DateTime(2023, 5, 16),   //  仮(リリースから18カ月)
+                    Edition.Enterprise => new DateTime(2024, 11, 16),   //  仮(リリースから36カ月)
+                    Edition.Education => new DateTime(2024, 11, 16),    //  仮(リリースから36カ月)
+                    Edition.ProEducation => new DateTime(2024, 11, 16), //  仮(リリースから36カ月)
                     Edition.EnterpriseLTSB => null,
                     Edition.EnterpriseLTSC => null,
                     _ => null
