@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OSVersion2.OS.Windows
 {
-    internal class FindMacOS
+    internal class FindMac
     {
         //  後回し
 

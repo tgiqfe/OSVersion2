@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OSVersion2.OS.Windows;
+using OSVersion2.OS.Linux;
 
 namespace OSVersion2.OS
 {
@@ -12,7 +13,12 @@ namespace OSVersion2.OS
         /// <summary>
         /// OSの名前
         /// </summary>
-        public virtual string Name { get; set; }
+        public string Name { get; set; }
+
+        /// <summary>
+        /// OSファミリー (Windows/Mac/Linux)
+        /// </summary>
+        public OSFamily OSFamily { get; set; }
 
         /// <summary>
         /// OSのバージョンの名前。一番通りの良い名前。
@@ -33,6 +39,11 @@ namespace OSVersion2.OS
         /// エディション
         /// </summary>
         public Edition? Edition { get; set; }
+
+        /// <summary>
+        /// Linuxディストリビューション
+        /// </summary>
+        public Distribution? Distribution { get; set; }
 
         /// <summary>
         /// リリース日
@@ -73,68 +84,11 @@ namespace OSVersion2.OS
         public OSInfo() { }
 
         /// <summary>
-        /// コンストラクタ。全て文字列で
-        /// </summary>
-        /// <param name="versionName"></param>
-        /// <param name="serial"></param>
-        /// <param name="alias"></param>
-        /// <param name="buildNumber"></param>
-        /// <param name="fullVersion"></param>
-        /// <param name="edition"></param>
-        /// <param name="releaseDate"></param>
-        /// <param name="endSupportDate"></param>
-        /// <param name="isServer"></param>
-        /// <param name="isEmbedded"></param>
-        public OSInfo(string name, string versionName, int serial, string alias, string buildNumber, string edition, string releaseDate, string endSupportDate, bool isServer, bool isEmbedded)
-        {
-            this.Name = name;
-            this.VersionName = versionName;
-            this.Serial = serial;
-            this.Alias = alias.Split(',').Select(x => x.Trim()).ToArray();
-            this.Version = buildNumber;
-            this.Edition = Enum.TryParse(edition, out Edition ed) ? ed : null;
-            this.ReleaseDate = DateTime.TryParse(releaseDate, out DateTime rd) ? rd : DateTime.MinValue;
-            this.EndSupportDate = DateTime.TryParse(endSupportDate, out DateTime es) ? es : DateTime.MinValue;
-            this.IsServer = isServer;
-            this.IsEmbedded = isEmbedded;
-        }
-
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
-        /// <param name="versionName"></param>
-        /// <param name="serial"></param>
-        /// <param name="alias"></param>
-        /// <param name="buildNUmber"></param>
-        /// <param name="fullVersion"></param>
-        /// <param name="edition"></param>
-        /// <param name="releaseDate"></param>
-        /// <param name="endSupportDate"></param>
-        /// <param name="isServer"></param>
-        /// <param name="isEmbedded"></param>
-        public OSInfo(string name, string versionName, int serial, string[] alias, string buildNUmber, Edition? edition, DateTime releaseDate, DateTime? endSupportDate, bool isServer, bool isEmbedded)
-        {
-            this.Name = name;
-            this.VersionName = versionName;
-            this.Serial = serial;
-            this.Alias = alias;
-            this.Version = buildNUmber;
-            this.Edition = edition;
-            this.ReleaseDate = releaseDate;
-            this.EndSupportDate = endSupportDate;
-            this.IsServer = isServer;
-            this.IsEmbedded = isEmbedded;
-        }
-
-        /// <summary>
         /// 文字列化
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            
-
-
             return string.Format("{0}{1} ver.{2}",
                 Name,
                 Edition == null || Edition == Windows.Edition.None ? 

@@ -12,8 +12,9 @@ Console.WriteLine("大なりイコール: {0}", _1903 >= _2004);
 Console.WriteLine("小なりイコール: {0}", _1903 <= _2004);
 Console.WriteLine("--------");
 
-var info = OSVersion.GetCurrent();
-Console.WriteLine(info);
+var thisOS = OSVersion.GetCurrent();
+Console.WriteLine(thisOS);
+Console.WriteLine("thisOS < v2004 : {0}", thisOS < 2004);
 Console.WriteLine("--------");
 
 OSInfoCollection collection = new OSInfoCollection();
@@ -29,7 +30,5 @@ OSInfo _1703 = OSVersion.GetWindows("Creators Update");
 Console.WriteLine(_1703);
 OSInfo _1803 = OSVersion.GetWindows("1803");
 Console.WriteLine(_1803);
-
-Console.WriteLine("Hello, World!");
 
 Console.ReadLine();

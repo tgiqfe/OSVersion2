@@ -26,7 +26,7 @@ namespace OSVersion2.OS
             }
             else if (OperatingSystem.IsMacOS())
             {
-                return FindMacOS.GetOSInfo();
+                return FindMac.GetOSInfo();
             }
             else if (OperatingSystem.IsLinux())
             {

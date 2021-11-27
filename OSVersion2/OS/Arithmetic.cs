@@ -13,7 +13,14 @@ namespace OSVersion2.OS
         /// </summary>
         public int Serial { get; set; }
 
-        public static bool operator <(Arithmetic x, Arithmetic y) { return x.Serial < y.Serial; }
+        public static bool operator <(Arithmetic x, Arithmetic y)
+        {
+            if (x is not null && y is not null)
+            {
+                
+            }
+            return x.Serial < y.Serial;
+        }
         public static bool operator <(Arithmetic x, int y) { return x.Serial < y; }
         public static bool operator <(int x, Arithmetic y) { return x < y.Serial; }
 
@@ -33,7 +40,7 @@ namespace OSVersion2.OS
         public static bool operator ==(Arithmetic x, int y) { return x is not null ? x.Serial == y : false; }
         public static bool operator ==(int x, Arithmetic y) { return y is not null ? x == y.Serial : false; }
 
-        public static bool operator !=(Arithmetic x, Arithmetic y) { return x is not null & y is not null ? x.Serial != y.Serial : true; }
+        public static bool operator !=(Arithmetic x, Arithmetic y) { return x is not null && y is not null ? x.Serial != y.Serial : true; }
         public static bool operator !=(Arithmetic x, int y) { return x is not null ? x.Serial != y : true; }
         public static bool operator !=(int x, Arithmetic y) { return y is not null ? x != y.Serial : true; }
 
