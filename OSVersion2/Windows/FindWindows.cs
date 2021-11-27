@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using System.Management;
+using System.Text.RegularExpressions;
 
 namespace OSVersion2.Windows
 {
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     internal class FindWindows
     {
+        #region Check ServerOS
+
         [DllImport("shlwapi.dll", SetLastError = true, EntryPoint = "#437")]
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool IsOS(uint os);
@@ -57,6 +62,50 @@ namespace OSVersion2.Windows
         public static bool IsWindowsServer()
         {
             return IsOS(OS_AnyServer);
+        }
+
+        #endregion
+
+        public static OSInfo GetOSInfo()
+        {
+            var mo = new ManagementClass("Win32_OperatingSystem").
+                GetInstances().
+                OfType<ManagementObject>().
+                First();
+            string caption = mo["Caption"]?.ToString();
+            string editionText = Regex.Replace(caption, @"Microsoft\sWindows\s\d+\s", "");
+            Edition edition = Enum.TryParse(editionText, out Edition tempEdition) ? tempEdition : Edition.None;
+
+            if (IsWindowsServer())
+            {
+                //  Windows Serverのチェックをここで
+            }
+            else
+            {
+                OSInfo info = (mo["Version"]?.ToString() ?? "") switch
+                {
+                    "10.0.10240" => Windows10.Create1507(edition),
+                    "10.0.10586" => Windows10.Create1511(edition),
+                    "10.0.14393" => Windows10.Create1607(edition),
+                    "10.0.15063" => Windows10.Create1703(edition),
+                    "10.0.16299" => Windows10.Create1709(edition),
+                    "10.0.17134" => Windows10.Create1803(edition),
+                    "10.0.17763" => Windows10.Create1809(edition),
+                    "10.0.18362" => Windows10.Create1903(edition),
+                    "10.0.18636" => Windows10.Create1909(edition),
+                    "10.0.19041" => Windows10.Create2004(edition),
+                    "10.0.19042" => Windows10.Create20H2(edition),
+                    "10.0.19043" => Windows10.Create21H1(edition),
+                    "10.0.19044" => Windows10.Create21H2(edition),
+                    "10.0.22000" => Windows11.Create21H2(edition),
+                    _ => null,
+                };
+
+                //  Embeddedの判定をこのあたりで
+
+                return info;
+            };
+            return null;
         }
     }
 }

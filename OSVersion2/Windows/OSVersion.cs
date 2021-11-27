@@ -9,34 +9,25 @@ namespace OSVersion2.Windows
 {
     internal class OSVersion
     {
-        public static void GetCurrent()
+        /// <summary>
+        /// Windows/Mac/Linuxを判定し、それぞれのFind～クラスでのOSInfoチェック
+        /// </summary>
+        /// <returns></returns>
+        public static OSInfo GetCurrent()
         {
             if (OperatingSystem.IsWindows())
             {
-                GetWindows();
+                return FindWindows.GetOSInfo();
             }
             else if (OperatingSystem.IsMacOS())
             {
-                GetMacOS();
+                return FindMacOS.GetOSInfo();   
             }
             else if (OperatingSystem.IsLinux())
             {
-                GetLinux();
+                return FindLinux.GetOSInfo();
             }
+            return null;
         }
-
-        /// <summary>
-        /// Windows用のバージョン取得
-        /// </summary>
-        public static void GetWindows()
-        {
-
-        }
-
-        //  Mac用のバージョン取得。後回し
-        public static void GetMacOS() { }
-
-        //  Linux用のバージョン取得。後回し
-        public static void GetLinux() { }
     }
 }

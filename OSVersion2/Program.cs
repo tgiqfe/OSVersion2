@@ -11,6 +11,10 @@ Console.WriteLine("大なりイコール: {0}", _1903 >= _2004);
 Console.WriteLine("小なりイコール: {0}", _1903 <= _2004);
 
 
+var info = OSVersion2.Windows.OSVersion.GetCurrent();
+
+Console.WriteLine(info);
+
 
 Console.WriteLine("Hello, World!");
 

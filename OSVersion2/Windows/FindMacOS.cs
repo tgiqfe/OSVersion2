@@ -9,5 +9,7 @@ namespace OSVersion2.Windows
     internal class FindMacOS
     {
         //  後回し
+
+        public static OSInfo GetOSInfo() { return null; }
     }
 }

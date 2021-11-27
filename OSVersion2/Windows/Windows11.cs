@@ -10,7 +10,7 @@ namespace OSVersion2.Windows
     {
         public override string Name { get { return "Windows 11"; } }
 
-        public static Windows11 Create1507(Edition edition)
+        public static Windows11 Create21H2(Edition edition)
         {
             return new Windows11()
             {

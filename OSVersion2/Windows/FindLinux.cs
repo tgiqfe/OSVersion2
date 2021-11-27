@@ -9,5 +9,7 @@ namespace OSVersion2.Windows
     internal class FindLinux
     {
         //  後回し
+
+        public static OSInfo GetOSInfo() { return null; }
     }
 }

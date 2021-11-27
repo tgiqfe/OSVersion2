@@ -124,5 +124,14 @@ namespace OSVersion2.Windows
             this.IsServer = isServer;
             this.IsEmbedded = isEmbedded;
         }
+
+        /// <summary>
+        /// 文字列化
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }
