@@ -107,5 +107,10 @@ namespace OSVersion2.OS.Windows
             };
             return null;
         }
+
+        public static OSInfo GetWindows(int osSerial)
+        {
+            return null;
+        }
     }
 }

@@ -10,6 +10,8 @@ namespace OSVersion2.OS
 {
     internal class OSVersion
     {
+        private static OSInfoCollection _collection = null;
+
         #region GetCurrent method
 
         /// <summary>
@@ -24,7 +26,7 @@ namespace OSVersion2.OS
             }
             else if (OperatingSystem.IsMacOS())
             {
-                return FindMacOS.GetOSInfo();   
+                return FindMacOS.GetOSInfo();
             }
             else if (OperatingSystem.IsLinux())
             {
@@ -36,14 +38,31 @@ namespace OSVersion2.OS
         #endregion
         #region GetWindows
 
-        public static OSInfo GetWindows(int osSerial)
+        public static OSInfo GetWindows(int versionSerial)
         {
-            return null;
+            _collection ??= OSInfoCollection.Load();
+            OSInfo result = _collection.FirstOrDefault(x => x.Serial == versionSerial);
+            if (result != null) { result.Edition = Edition.None; }
+
+            return result;
         }
 
-        public static OSInfo GetWindows(string osName)
+        public static OSInfo GetWindows(string versionName)
         {
-            return null;
+            _collection ??= OSInfoCollection.Load();
+
+            if(int.TryParse(versionName, out int tempInt))
+            {
+                return GetWindows(tempInt);
+            }
+            OSInfo result =
+                _collection.FirstOrDefault(x => x.VersionName.Equals(versionName, StringComparison.OrdinalIgnoreCase)) ??
+                _collection.FirstOrDefault(x => x.Alias.Any(y => y.Equals(versionName, StringComparison.OrdinalIgnoreCase))) ??
+                _collection.FirstOrDefault(x => x.Version.Equals(versionName)) ??
+                _collection.FirstOrDefault(x => x.BuildVersion.Equals(versionName));
+            if (result != null) { result.Edition = Edition.None; }
+
+            return result;
         }
 
         #endregion

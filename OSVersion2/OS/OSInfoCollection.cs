@@ -128,6 +128,7 @@ namespace OSVersion2.OS
             {
                 result = new OSInfoCollection();
                 result.LoadDefault();
+                result.Save();
             }
 
             return result;

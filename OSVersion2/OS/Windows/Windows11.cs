@@ -14,6 +14,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows11()
             {
+                Name = "Windows 11",
                 VersionName = "21H2",
                 Serial = 2109,
                 Alias = new string[] { "Released Version" },

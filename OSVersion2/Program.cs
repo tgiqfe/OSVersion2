@@ -23,7 +23,12 @@ foreach (var osInfo in collection)
     Console.WriteLine(osInfo);
 }
 
-
+OSInfo _1507 = OSVersion.GetWindows(1507);
+Console.WriteLine(_1507);
+OSInfo _1703 = OSVersion.GetWindows("Creators Update");
+Console.WriteLine(_1703);
+OSInfo _1803 = OSVersion.GetWindows("1803");
+Console.WriteLine(_1803);
 
 Console.WriteLine("Hello, World!");
 

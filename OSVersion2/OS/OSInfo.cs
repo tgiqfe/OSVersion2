@@ -12,7 +12,7 @@ namespace OSVersion2.OS
         /// <summary>
         /// OSの名前
         /// </summary>
-        public virtual string Name { get; }
+        public virtual string Name { get; set; }
 
         /// <summary>
         /// OSのバージョンの名前。一番通りの良い名前。
@@ -28,7 +28,7 @@ namespace OSVersion2.OS
         /// バージョン
         /// </summary>
         public string Version { get; set; }
-        
+
         /// <summary>
         /// エディション
         /// </summary>
@@ -132,7 +132,10 @@ namespace OSVersion2.OS
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Name} {Edition} ver.{VersionName}";
+            return string.Format("{0}{1} ver.{2}",
+                Name,
+                Edition == Edition.None ? "" : " " + Edition,
+                VersionName);
         }
     }
 }

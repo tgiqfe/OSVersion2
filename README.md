@@ -7,8 +7,8 @@
 OSInfo thisPC = OSVersion.GetCurrent();
 ```
 
-Windows 10 Ver. 1511 (November Update) と比較して、それより新しイバージョンかどうか  
-&lbrack;OSVersion&rbrack;クラス同士の比較
+Windows 10 Ver. 1511 (November Update) と比較して、それより新しいバージョンかどうか  
+&lbrack;OSInfo&rbrack;クラス同士の比較
 ```csharp
 OSVersion os1511 = new OSVersion(1511);
 if (thisPC > os1511)

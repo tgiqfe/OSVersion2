@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OSVersion2.OS.Windows
+namespace OSVersion2.OS
 {
     internal class Arithmetic
     {
         /// <summary>
         /// インスタンスに対する番号。この値を基に計算
         /// </summary>
-        protected int Serial { get; set; }
+        public int Serial { get; set; }
 
         public static bool operator <(Arithmetic x, Arithmetic y) { return x.Serial < y.Serial; }
         public static bool operator <(Arithmetic x, int y) { return x.Serial < y; }

@@ -14,6 +14,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1507",
                 Serial = 1507,
                 Alias = new string[] { "Released in July 2015", "Threshold 1" },
@@ -40,6 +41,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1511",
                 Serial = 1511,
                 Alias = new string[] { "November Update", "Threshold 2" },
@@ -66,6 +68,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1607",
                 Serial = 1607,
                 Alias = new string[] { "Anniversary Update", "Redstone 1", },
@@ -92,6 +95,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1703",
                 Serial = 1703,
                 Alias = new string[] { "Creators Update", "Redstone 2" },
@@ -118,6 +122,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1709",
                 Serial = 1709,
                 Alias = new string[] { "Fall Creators Update", "Redstone 3" },
@@ -144,6 +149,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1803",
                 Serial = 1803,
                 Alias = new string[] { "April 2018 Update", "Redstone 4" },
@@ -170,6 +176,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1809",
                 Serial = 1809,
                 Alias = new string[] { "October 2018 Update", "Redstone 5" },
@@ -196,6 +203,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1903",
                 Serial = 1903,
                 Alias = new string[] { "May 2019 Update", "19H1" },
@@ -222,6 +230,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "1909",
                 Serial = 1909,
                 Alias = new string[] { "November 2019 Update", "19H2" },
@@ -248,6 +257,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "2004",
                 Serial = 2004,
                 Alias = new string[] { "May 2020 Update", "20H1" },
@@ -274,6 +284,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "20H2",
                 Serial = 2009,
                 Alias = new string[] { "October 2020 Update" },
@@ -300,6 +311,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "21H1",
                 Serial = 2103,
                 Alias = new string[] { "May 2021 Update" },
@@ -326,6 +338,7 @@ namespace OSVersion2.OS.Windows
         {
             return new Windows10()
             {
+                Name = "Windows 10",
                 VersionName = "21H2",
                 Serial = 2110,
                 Alias = new string[] { "November 2021 Update" },
