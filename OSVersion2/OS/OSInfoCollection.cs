@@ -21,17 +21,20 @@ namespace OSVersion2.OS
         public void LoadDefault()
         {
             //  Windows 10
+            Add(Windows10.Create1507(null));
             Add(Windows10.Create1507(Edition.Home));
             Add(Windows10.Create1507(Edition.Pro));
             Add(Windows10.Create1507(Edition.Enterprise));
             Add(Windows10.Create1507(Edition.Education));
             Add(Windows10.Create1507(Edition.EnterpriseLTSB));
 
+            Add(Windows10.Create1511(null));
             Add(Windows10.Create1511(Edition.Home));
             Add(Windows10.Create1511(Edition.Pro));
             Add(Windows10.Create1511(Edition.Enterprise));
             Add(Windows10.Create1511(Edition.Education));
 
+            Add(Windows10.Create1607(null));
             Add(Windows10.Create1607(Edition.Home));
             Add(Windows10.Create1607(Edition.Pro));
             Add(Windows10.Create1607(Edition.Enterprise));
@@ -39,24 +42,28 @@ namespace OSVersion2.OS
             Add(Windows10.Create1607(Edition.ProEducation));
             Add(Windows10.Create1607(Edition.EnterpriseLTSB));
 
+            Add(Windows10.Create1703(null));
             Add(Windows10.Create1703(Edition.Home));
             Add(Windows10.Create1703(Edition.Pro));
             Add(Windows10.Create1703(Edition.Enterprise));
             Add(Windows10.Create1703(Edition.Education));
             Add(Windows10.Create1703(Edition.ProEducation));
 
+            Add(Windows10.Create1709(null));
             Add(Windows10.Create1709(Edition.Home));
             Add(Windows10.Create1709(Edition.Pro));
             Add(Windows10.Create1709(Edition.Enterprise));
             Add(Windows10.Create1709(Edition.Education));
             Add(Windows10.Create1709(Edition.ProEducation));
 
+            Add(Windows10.Create1803(null));
             Add(Windows10.Create1803(Edition.Home));
             Add(Windows10.Create1803(Edition.Pro));
             Add(Windows10.Create1803(Edition.Enterprise));
             Add(Windows10.Create1803(Edition.Education));
             Add(Windows10.Create1803(Edition.ProEducation));
 
+            Add(Windows10.Create1809(null));
             Add(Windows10.Create1809(Edition.Home));
             Add(Windows10.Create1809(Edition.Pro));
             Add(Windows10.Create1809(Edition.Enterprise));
@@ -64,36 +71,42 @@ namespace OSVersion2.OS
             Add(Windows10.Create1809(Edition.ProEducation));
             Add(Windows10.Create1809(Edition.EnterpriseLTSC));
 
+            Add(Windows10.Create1903(null));
             Add(Windows10.Create1903(Edition.Home));
             Add(Windows10.Create1903(Edition.Pro));
             Add(Windows10.Create1903(Edition.Enterprise));
             Add(Windows10.Create1903(Edition.Education));
             Add(Windows10.Create1903(Edition.ProEducation));
 
+            Add(Windows10.Create1909(null));
             Add(Windows10.Create1909(Edition.Home));
             Add(Windows10.Create1909(Edition.Pro));
             Add(Windows10.Create1909(Edition.Enterprise));
             Add(Windows10.Create1909(Edition.Education));
             Add(Windows10.Create1909(Edition.ProEducation));
 
+            Add(Windows10.Create2004(null));
             Add(Windows10.Create2004(Edition.Home));
             Add(Windows10.Create2004(Edition.Pro));
             Add(Windows10.Create2004(Edition.Enterprise));
             Add(Windows10.Create2004(Edition.Education));
             Add(Windows10.Create2004(Edition.ProEducation));
 
+            Add(Windows10.Create20H2(null));
             Add(Windows10.Create20H2(Edition.Home));
             Add(Windows10.Create20H2(Edition.Pro));
             Add(Windows10.Create20H2(Edition.Enterprise));
             Add(Windows10.Create20H2(Edition.Education));
             Add(Windows10.Create20H2(Edition.ProEducation));
 
+            Add(Windows10.Create21H1(null));
             Add(Windows10.Create21H1(Edition.Home));
             Add(Windows10.Create21H1(Edition.Pro));
             Add(Windows10.Create21H1(Edition.Enterprise));
             Add(Windows10.Create21H1(Edition.Education));
             Add(Windows10.Create21H1(Edition.ProEducation));
 
+            Add(Windows10.Create21H2(null));
             Add(Windows10.Create21H2(Edition.Home));
             Add(Windows10.Create21H2(Edition.Pro));
             Add(Windows10.Create21H2(Edition.Enterprise));
@@ -101,6 +114,7 @@ namespace OSVersion2.OS
             Add(Windows10.Create21H2(Edition.ProEducation));
 
             //  Windows 11
+            Add(Windows11.Create21H2(null));
             Add(Windows11.Create21H2(Edition.Home));
             Add(Windows11.Create21H2(Edition.Pro));
             Add(Windows11.Create21H2(Edition.ProEducation));
