@@ -10,7 +10,7 @@ namespace OSVersion2.OS.Windows
     {
         public override string Name { get { return "Windows 11"; } }
 
-        public static Windows11 Create21H2(Edition edition)
+        public static Windows11 Create21H2(Edition? edition)
         {
             return new Windows11()
             {
@@ -23,12 +23,12 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2021, 10, 5),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2023, 10, 10),
-                    Edition.Pro => new DateTime(2023, 10, 10),
-                    Edition.ProEducation => new DateTime(2023, 10, 10),
-                    Edition.ProForWorkstations => new DateTime(2023, 10, 10),
-                    Edition.Enterprise => new DateTime(2024, 10, 8),
-                    Edition.Education => new DateTime(2024, 10, 8),
+                    Windows.Edition.Home => new DateTime(2023, 10, 10),
+                    Windows.Edition.Pro => new DateTime(2023, 10, 10),
+                    Windows.Edition.ProEducation => new DateTime(2023, 10, 10),
+                    Windows.Edition.ProForWorkstations => new DateTime(2023, 10, 10),
+                    Windows.Edition.Enterprise => new DateTime(2024, 10, 8),
+                    Windows.Edition.Education => new DateTime(2024, 10, 8),
                     _ => null,
                 },
                 IsServer = false,

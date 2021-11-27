@@ -32,7 +32,7 @@ namespace OSVersion2.OS
         /// <summary>
         /// エディション
         /// </summary>
-        public Edition Edition { get; set; }
+        public Edition? Edition { get; set; }
 
         /// <summary>
         /// リリース日
@@ -92,7 +92,7 @@ namespace OSVersion2.OS
             this.Serial = serial;
             this.Alias = alias.Split(',').Select(x => x.Trim()).ToArray();
             this.Version = buildNumber;
-            this.Edition = Enum.TryParse(edition, out Edition ed) ? ed : Edition.None;
+            this.Edition = Enum.TryParse(edition, out Edition ed) ? ed : null;
             this.ReleaseDate = DateTime.TryParse(releaseDate, out DateTime rd) ? rd : DateTime.MinValue;
             this.EndSupportDate = DateTime.TryParse(endSupportDate, out DateTime es) ? es : DateTime.MinValue;
             this.IsServer = isServer;
@@ -112,7 +112,7 @@ namespace OSVersion2.OS
         /// <param name="endSupportDate"></param>
         /// <param name="isServer"></param>
         /// <param name="isEmbedded"></param>
-        public OSInfo(string name, string versionName, int serial, string[] alias, string buildNUmber, Edition edition, DateTime releaseDate, DateTime? endSupportDate, bool isServer, bool isEmbedded)
+        public OSInfo(string name, string versionName, int serial, string[] alias, string buildNUmber, Edition? edition, DateTime releaseDate, DateTime? endSupportDate, bool isServer, bool isEmbedded)
         {
             this.Name = name;
             this.VersionName = versionName;
@@ -132,9 +132,14 @@ namespace OSVersion2.OS
         /// <returns></returns>
         public override string ToString()
         {
+            
+
+
             return string.Format("{0}{1} ver.{2}",
                 Name,
-                Edition == Edition.None ? "" : " " + Edition,
+                Edition == null || Edition == Windows.Edition.None ? 
+                    "" : 
+                    " " + Edition,
                 VersionName);
         }
     }

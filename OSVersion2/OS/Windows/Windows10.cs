@@ -10,7 +10,7 @@ namespace OSVersion2.OS.Windows
     {
         public override string Name { get { return "Windows 10"; } }
 
-        public static Windows10 Create1507(Edition edition)
+        public static Windows10 Create1507(Edition? edition)
         {
             return new Windows10()
             {
@@ -23,13 +23,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2015, 7, 29),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2015, 7, 29),
-                    Edition.Pro => new DateTime(2015, 7, 29),
-                    Edition.Enterprise => new DateTime(2015, 7, 29),
-                    Edition.Education => new DateTime(2015, 7, 29),
-                    Edition.ProEducation => null,
-                    Edition.EnterpriseLTSB => new DateTime(2025, 10, 14),
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2015, 7, 29),
+                    Windows.Edition.Pro => new DateTime(2015, 7, 29),
+                    Windows.Edition.Enterprise => new DateTime(2015, 7, 29),
+                    Windows.Edition.Education => new DateTime(2015, 7, 29),
+                    Windows.Edition.ProEducation => null,
+                    Windows.Edition.EnterpriseLTSB => new DateTime(2025, 10, 14),
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => DateTime.MinValue,
                 },
                 IsServer = false,
@@ -37,7 +37,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create1511(Edition edition)
+        public static Windows10 Create1511(Edition? edition)
         {
             return new Windows10()
             {
@@ -50,13 +50,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2015, 11, 10),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2017, 10, 10),
-                    Edition.Pro => new DateTime(2017, 10, 10),
-                    Edition.Enterprise => new DateTime(2018, 4, 10),
-                    Edition.Education => new DateTime(2018, 4, 10),
-                    Edition.ProEducation => null,
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2017, 10, 10),
+                    Windows.Edition.Pro => new DateTime(2017, 10, 10),
+                    Windows.Edition.Enterprise => new DateTime(2018, 4, 10),
+                    Windows.Edition.Education => new DateTime(2018, 4, 10),
+                    Windows.Edition.ProEducation => null,
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -64,7 +64,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create1607(Edition edition)
+        public static Windows10 Create1607(Edition? edition)
         {
             return new Windows10()
             {
@@ -77,13 +77,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2016, 8, 2),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2018, 4, 10),
-                    Edition.Pro => new DateTime(2018, 4, 10),
-                    Edition.Enterprise => new DateTime(2019, 4, 9),
-                    Edition.Education => new DateTime(2019, 4, 9),
-                    Edition.ProEducation => new DateTime(2019, 4, 9),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => new DateTime(2026, 10, 13),
+                    Windows.Edition.Home => new DateTime(2018, 4, 10),
+                    Windows.Edition.Pro => new DateTime(2018, 4, 10),
+                    Windows.Edition.Enterprise => new DateTime(2019, 4, 9),
+                    Windows.Edition.Education => new DateTime(2019, 4, 9),
+                    Windows.Edition.ProEducation => new DateTime(2019, 4, 9),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => new DateTime(2026, 10, 13),
                     _ => null
                 },
                 IsServer = false,
@@ -91,7 +91,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create1703(Edition edition)
+        public static Windows10 Create1703(Edition? edition)
         {
             return new Windows10()
             {
@@ -104,13 +104,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2017, 4, 5),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2018, 10, 9),
-                    Edition.Pro => new DateTime(2018, 10, 9),
-                    Edition.Enterprise => new DateTime(2019, 10, 8),
-                    Edition.Education => new DateTime(2019, 10, 8),
-                    Edition.ProEducation => new DateTime(2019, 10, 8),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2018, 10, 9),
+                    Windows.Edition.Pro => new DateTime(2018, 10, 9),
+                    Windows.Edition.Enterprise => new DateTime(2019, 10, 8),
+                    Windows.Edition.Education => new DateTime(2019, 10, 8),
+                    Windows.Edition.ProEducation => new DateTime(2019, 10, 8),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -118,7 +118,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create1709(Edition edition)
+        public static Windows10 Create1709(Edition? edition)
         {
             return new Windows10()
             {
@@ -131,13 +131,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2017, 10, 17),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2019, 4, 9),
-                    Edition.Pro => new DateTime(2019, 4, 9),
-                    Edition.Enterprise => new DateTime(2020, 10, 13),
-                    Edition.Education => new DateTime(2020, 10, 13),
-                    Edition.ProEducation => new DateTime(2020, 10, 13),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2019, 4, 9),
+                    Windows.Edition.Pro => new DateTime(2019, 4, 9),
+                    Windows.Edition.Enterprise => new DateTime(2020, 10, 13),
+                    Windows.Edition.Education => new DateTime(2020, 10, 13),
+                    Windows.Edition.ProEducation => new DateTime(2020, 10, 13),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -145,7 +145,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create1803(Edition edition)
+        public static Windows10 Create1803(Edition? edition)
         {
             return new Windows10()
             {
@@ -158,13 +158,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2018, 4, 30),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2019, 11, 12),
-                    Edition.Pro => new DateTime(2019, 11, 12),
-                    Edition.Enterprise => new DateTime(2021, 5, 11),
-                    Edition.Education => new DateTime(2021, 5, 11),
-                    Edition.ProEducation => new DateTime(2021, 5, 11),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2019, 11, 12),
+                    Windows.Edition.Pro => new DateTime(2019, 11, 12),
+                    Windows.Edition.Enterprise => new DateTime(2021, 5, 11),
+                    Windows.Edition.Education => new DateTime(2021, 5, 11),
+                    Windows.Edition.ProEducation => new DateTime(2021, 5, 11),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -172,7 +172,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create1809(Edition edition)
+        public static Windows10 Create1809(Edition? edition)
         {
             return new Windows10()
             {
@@ -185,13 +185,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2018, 11, 13),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2020, 11, 10),
-                    Edition.Pro => new DateTime(2020, 11, 10),
-                    Edition.Enterprise => new DateTime(2021, 5, 11),
-                    Edition.Education => new DateTime(2021, 5, 11),
-                    Edition.ProEducation => new DateTime(2021, 5, 11),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => new DateTime(2029, 1, 9),
+                    Windows.Edition.Home => new DateTime(2020, 11, 10),
+                    Windows.Edition.Pro => new DateTime(2020, 11, 10),
+                    Windows.Edition.Enterprise => new DateTime(2021, 5, 11),
+                    Windows.Edition.Education => new DateTime(2021, 5, 11),
+                    Windows.Edition.ProEducation => new DateTime(2021, 5, 11),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => new DateTime(2029, 1, 9),
                     _ => null
                 },
                 IsServer = false,
@@ -199,7 +199,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create1903(Edition edition)
+        public static Windows10 Create1903(Edition? edition)
         {
             return new Windows10()
             {
@@ -212,13 +212,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2019, 5, 21),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2020, 12, 8),
-                    Edition.Pro => new DateTime(2020, 12, 8),
-                    Edition.Enterprise => new DateTime(2020, 12, 8),
-                    Edition.Education => new DateTime(2020, 12, 8),
-                    Edition.ProEducation => new DateTime(2020, 12, 8),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2020, 12, 8),
+                    Windows.Edition.Pro => new DateTime(2020, 12, 8),
+                    Windows.Edition.Enterprise => new DateTime(2020, 12, 8),
+                    Windows.Edition.Education => new DateTime(2020, 12, 8),
+                    Windows.Edition.ProEducation => new DateTime(2020, 12, 8),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -226,7 +226,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create1909(Edition edition)
+        public static Windows10 Create1909(Edition? edition)
         {
             return new Windows10()
             {
@@ -239,13 +239,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2019, 11, 12),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2021, 5, 11),
-                    Edition.Pro => new DateTime(2021, 5, 11),
-                    Edition.Enterprise => new DateTime(2021, 5, 11),
-                    Edition.Education => new DateTime(2021, 5, 11),
-                    Edition.ProEducation => new DateTime(2021, 5, 11),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2021, 5, 11),
+                    Windows.Edition.Pro => new DateTime(2021, 5, 11),
+                    Windows.Edition.Enterprise => new DateTime(2021, 5, 11),
+                    Windows.Edition.Education => new DateTime(2021, 5, 11),
+                    Windows.Edition.ProEducation => new DateTime(2021, 5, 11),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -253,7 +253,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create2004(Edition edition)
+        public static Windows10 Create2004(Edition? edition)
         {
             return new Windows10()
             {
@@ -266,13 +266,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2020, 5, 27),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2021, 12, 14),
-                    Edition.Pro => new DateTime(2021, 12, 14),
-                    Edition.Enterprise => new DateTime(2021, 12, 14),
-                    Edition.Education => new DateTime(2021, 12, 14),
-                    Edition.ProEducation => new DateTime(2021, 12, 14),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2021, 12, 14),
+                    Windows.Edition.Pro => new DateTime(2021, 12, 14),
+                    Windows.Edition.Enterprise => new DateTime(2021, 12, 14),
+                    Windows.Edition.Education => new DateTime(2021, 12, 14),
+                    Windows.Edition.ProEducation => new DateTime(2021, 12, 14),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -280,7 +280,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create20H2(Edition edition)
+        public static Windows10 Create20H2(Edition? edition)
         {
             return new Windows10()
             {
@@ -293,13 +293,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2020, 10, 20),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2022, 5, 10),
-                    Edition.Pro => new DateTime(2022, 5, 10),
-                    Edition.Enterprise => new DateTime(2023, 5, 9),
-                    Edition.Education => new DateTime(2023, 5, 9),
-                    Edition.ProEducation => new DateTime(2023, 5, 9),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2022, 5, 10),
+                    Windows.Edition.Pro => new DateTime(2022, 5, 10),
+                    Windows.Edition.Enterprise => new DateTime(2023, 5, 9),
+                    Windows.Edition.Education => new DateTime(2023, 5, 9),
+                    Windows.Edition.ProEducation => new DateTime(2023, 5, 9),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -307,7 +307,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create21H1(Edition edition)
+        public static Windows10 Create21H1(Edition? edition)
         {
             return new Windows10()
             {
@@ -320,13 +320,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2021, 5, 18),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2022, 12, 13),
-                    Edition.Pro => new DateTime(2022, 12, 13),
-                    Edition.Enterprise => new DateTime(2022, 12, 13),
-                    Edition.Education => new DateTime(2022, 12, 13),
-                    Edition.ProEducation => new DateTime(2022, 12, 13),
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2022, 12, 13),
+                    Windows.Edition.Pro => new DateTime(2022, 12, 13),
+                    Windows.Edition.Enterprise => new DateTime(2022, 12, 13),
+                    Windows.Edition.Education => new DateTime(2022, 12, 13),
+                    Windows.Edition.ProEducation => new DateTime(2022, 12, 13),
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
@@ -334,7 +334,7 @@ namespace OSVersion2.OS.Windows
             };
         }
 
-        public static Windows10 Create21H2(Edition edition)
+        public static Windows10 Create21H2(Edition? edition)
         {
             return new Windows10()
             {
@@ -347,13 +347,13 @@ namespace OSVersion2.OS.Windows
                 ReleaseDate = new DateTime(2021, 11, 16),
                 EndSupportDate = edition switch
                 {
-                    Edition.Home => new DateTime(2023, 5, 16),  //  仮(リリースから18カ月)
-                    Edition.Pro => new DateTime(2023, 5, 16),   //  仮(リリースから18カ月)
-                    Edition.Enterprise => new DateTime(2024, 11, 16),   //  仮(リリースから36カ月)
-                    Edition.Education => new DateTime(2024, 11, 16),    //  仮(リリースから36カ月)
-                    Edition.ProEducation => new DateTime(2024, 11, 16), //  仮(リリースから36カ月)
-                    Edition.EnterpriseLTSB => null,
-                    Edition.EnterpriseLTSC => null,
+                    Windows.Edition.Home => new DateTime(2023, 5, 16),          //  仮(リリースから18カ月)
+                    Windows.Edition.Pro => new DateTime(2023, 5, 16),           //  仮(リリースから18カ月)
+                    Windows.Edition.Enterprise => new DateTime(2024, 11, 16),   //  仮(リリースから36カ月)
+                    Windows.Edition.Education => new DateTime(2024, 11, 16),    //  仮(リリースから36カ月)
+                    Windows.Edition.ProEducation => new DateTime(2024, 11, 16), //  仮(リリースから36カ月)
+                    Windows.Edition.EnterpriseLTSB => null,
+                    Windows.Edition.EnterpriseLTSC => null,
                     _ => null
                 },
                 IsServer = false,
