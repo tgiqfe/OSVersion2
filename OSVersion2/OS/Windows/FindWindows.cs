@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Management;
 using System.Text.RegularExpressions;
 
-namespace OSVersion2.Windows
+namespace OSVersion2.OS.Windows
 {
     [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     internal class FindWindows

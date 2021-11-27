@@ -1,8 +1,8 @@
-﻿using OSVersion2.Windows;
-using OSVersion2;
+﻿using OSVersion2.OS.Windows;
+using OSVersion2.OS;
 
-var _1903 = OSVersion2.Windows.Windows10.Create1903(OSVersion2.Windows.Edition.Home);
-var _2004 = OSVersion2.Windows.Windows10.Create2004(OSVersion2.Windows.Edition.Home);
+var _1903 = Windows10.Create1903(Edition.Home);
+var _2004 = Windows10.Create2004(Edition.Home);
 
 Console.WriteLine("イコール: {0}", _1903 == _2004);
 Console.WriteLine("ノットイコール: {0}", _1903 != _2004);
@@ -12,7 +12,7 @@ Console.WriteLine("大なりイコール: {0}", _1903 >= _2004);
 Console.WriteLine("小なりイコール: {0}", _1903 <= _2004);
 Console.WriteLine("--------");
 
-var info = OSVersion2.OSVersion.GetCurrent();
+var info = OSVersion.GetCurrent();
 Console.WriteLine(info);
 Console.WriteLine("--------");
 

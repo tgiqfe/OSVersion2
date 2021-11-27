@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OSVersion2.Windows;
+using OSVersion2.OS.Windows;
 
-namespace OSVersion2
+namespace OSVersion2.OS
 {
     internal class OSInfo : Arithmetic
     {

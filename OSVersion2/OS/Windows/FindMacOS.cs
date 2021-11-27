@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OSVersion2.Windows
+namespace OSVersion2.OS.Windows
 {
     internal class FindMacOS
     {

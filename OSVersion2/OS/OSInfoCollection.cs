@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using OSVersion2.Windows;
+using OSVersion2.OS.Windows;
 using System.IO;
 
-namespace OSVersion2
+namespace OSVersion2.OS
 {
     internal class OSInfoCollection : List<OSInfo>
     {

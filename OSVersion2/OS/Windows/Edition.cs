@@ -1,5 +1,5 @@
 ﻿
-namespace OSVersion2.Windows
+namespace OSVersion2.OS.Windows
 {
     internal enum Edition
     {
