@@ -68,7 +68,15 @@ namespace OSVersion2.OS
         /// <summary>
         /// Alismeticで判定時に使用するGroup
         /// </summary>
-        public override string Group { get { return this.OSFamily.ToString(); } }
+        public override string Group
+        {
+            get
+            {
+                return this.OSFamily == OSFamily.Linux ?
+                    $"{OSFamily} {Distribution}" :
+                    this.OSFamily.ToString();
+            }
+        }
 
         /// <summary>
         /// メジャーバージョン

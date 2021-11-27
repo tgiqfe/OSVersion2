@@ -66,7 +66,9 @@ namespace OSVersion2.OS.Windows
 
         #endregion
 
-        public static OSInfo GetOSInfo()
+        private static OSInfoCollection _collection = null;
+
+        public static OSInfo GetCurrent()
         {
             var mo = new ManagementClass("Win32_OperatingSystem").
                 GetInstances().
@@ -82,6 +84,13 @@ namespace OSVersion2.OS.Windows
             }
             else
             {
+                _collection ??= OSInfoCollection.Load();
+                return _collection.
+                    Where(x => x.OSFamily == OSFamily.Windows).
+                    Where(x => !x.IsServer).
+                    FirstOrDefault(x => x.Version == (mo["Version"]?.ToString() ?? ""));
+
+                /*
                 OSInfo info = (mo["Version"]?.ToString() ?? "") switch
                 {
                     "10.0.10240" => Windows10.Create1507(edition),
@@ -100,16 +109,10 @@ namespace OSVersion2.OS.Windows
                     "10.0.22000" => Windows11.Create21H2(edition),
                     _ => null,
                 };
+                */
 
                 //  Embeddedの判定をこのあたりで
-
-                return info;
             };
-            return null;
-        }
-
-        public static OSInfo GetWindows(int osSerial)
-        {
             return null;
         }
     }

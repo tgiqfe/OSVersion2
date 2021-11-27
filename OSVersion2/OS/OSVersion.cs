@@ -22,7 +22,7 @@ namespace OSVersion2.OS
         {
             if (OperatingSystem.IsWindows())
             {
-                return FindWindows.GetOSInfo();
+                return FindWindows.GetCurrent();
             }
             else if (OperatingSystem.IsMacOS())
             {
@@ -41,7 +41,9 @@ namespace OSVersion2.OS
         public static OSInfo GetWindows(int versionSerial)
         {
             _collection ??= OSInfoCollection.Load();
-            OSInfo result = _collection.FirstOrDefault(x => x.Serial == versionSerial);
+
+            var windowsCollection = _collection.Where(x => x.OSFamily == OSFamily.Windows).Where(x => !x.IsServer);
+            OSInfo result = windowsCollection.FirstOrDefault(x => x.Serial == versionSerial);
             if (result != null) { result.Edition = Edition.None; }
 
             return result;
@@ -49,17 +51,19 @@ namespace OSVersion2.OS
 
         public static OSInfo GetWindows(string versionName)
         {
-            _collection ??= OSInfoCollection.Load();
-
-            if(int.TryParse(versionName, out int tempInt))
+            if (int.TryParse(versionName, out int tempInt))
             {
                 return GetWindows(tempInt);
             }
+
+            _collection ??= OSInfoCollection.Load();
+
+            var windowsCollection = _collection.Where(x => x.OSFamily == OSFamily.Windows).Where(x => !x.IsServer);
             OSInfo result =
-                _collection.FirstOrDefault(x => x.VersionName.Equals(versionName, StringComparison.OrdinalIgnoreCase)) ??
-                _collection.FirstOrDefault(x => x.Alias.Any(y => y.Equals(versionName, StringComparison.OrdinalIgnoreCase))) ??
-                _collection.FirstOrDefault(x => x.Version.Equals(versionName)) ??
-                _collection.FirstOrDefault(x => x.BuildVersion.Equals(versionName));
+                windowsCollection.FirstOrDefault(x => x.VersionName.Equals(versionName, StringComparison.OrdinalIgnoreCase)) ??
+                windowsCollection.FirstOrDefault(x => x.Alias.Any(y => y.Equals(versionName, StringComparison.OrdinalIgnoreCase))) ??
+                windowsCollection.FirstOrDefault(x => x.Version.Equals(versionName)) ??
+                windowsCollection.FirstOrDefault(x => x.BuildVersion.Equals(versionName));
             if (result != null) { result.Edition = Edition.None; }
 
             return result;
