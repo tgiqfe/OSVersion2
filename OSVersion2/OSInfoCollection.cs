@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using OSVersion2.Windows;
+using System.IO;
 
 namespace OSVersion2
 {
     internal class OSInfoCollection : List<OSInfo>
     {
+        const string dbPath = "osinfocollection.json";
+
         public OSInfoCollection() { }
+
+        #region Load default
 
         public void LoadDefault()
         {
-            #region Windows 10
-
+            //  Windows 10
             Add(Windows10.Create1507(Edition.Home));
             Add(Windows10.Create1507(Edition.Pro));
             Add(Windows10.Create1507(Edition.Enterprise));
@@ -98,17 +102,52 @@ namespace OSVersion2
             Add(Windows10.Create21H2(Edition.Education));
             Add(Windows10.Create21H2(Edition.EducationPro));
 
-            #endregion
-            #region Windows 11
-
+            //  Windows 11
             Add(Windows11.Create21H2(Edition.Home));
             Add(Windows11.Create21H2(Edition.Pro));
             Add(Windows11.Create21H2(Edition.ProEducation));
             Add(Windows11.Create21H2(Edition.ProForWorkstations));
             Add(Windows11.Create21H2(Edition.Enterprise));
             Add(Windows11.Create21H2(Edition.Education));
-
-            #endregion
         }
+
+        #endregion
+        #region Load/Save
+
+        public static OSInfoCollection Load()
+        {
+            OSInfoCollection result = null;
+            try
+            {
+                using (var sr = new StreamReader(dbPath, Encoding.UTF8))
+                {
+                    result = JsonSerializer.Deserialize<OSInfoCollection>(sr.ReadToEnd());
+                }
+            }
+            catch { }
+
+            if (result == null)
+            {
+                result = new OSInfoCollection();
+                result.LoadDefault();
+            }
+
+            return result;
+        }
+
+        public void Save()
+        {
+            using (var sw = new StreamWriter(dbPath, false, Encoding.UTF8))
+            {
+                string json = JsonSerializer.Serialize(this, new JsonSerializerOptions()
+                {
+                    WriteIndented = true,
+                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                });
+                sw.WriteLine(json);
+            }
+        }
+
+        #endregion
     }
 }
