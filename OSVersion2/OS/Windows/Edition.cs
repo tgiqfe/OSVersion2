@@ -23,5 +23,6 @@ namespace OSVersion2.OS.Windows
         ComputeCluster = 109,
         SmallBusiness = 110,
         StorageServer = 111,
+        Foundation = 112,
     }
 }

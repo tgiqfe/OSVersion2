@@ -121,6 +121,69 @@ namespace OSVersion2.OS
             Add(Windows11.Create21H2(Edition.ProForWorkstations));
             Add(Windows11.Create21H2(Edition.Enterprise));
             Add(Windows11.Create21H2(Edition.Education));
+
+            //  Windows Sever
+            Add(WindowsServer.Create2000(null));
+            Add(WindowsServer.Create2000(Edition.Professional));
+            Add(WindowsServer.Create2000(Edition.Server));
+            Add(WindowsServer.Create2000(Edition.AdvancedServer));
+            Add(WindowsServer.Create2000(Edition.DatacenterServer));
+
+            Add(WindowsServer.Create2003(null));
+            Add(WindowsServer.Create2003(Edition.Web));
+            Add(WindowsServer.Create2003(Edition.Standard));
+            Add(WindowsServer.Create2003(Edition.Enterprise));
+            Add(WindowsServer.Create2003(Edition.Datacenter));
+            Add(WindowsServer.Create2003(Edition.ComputeCluster));
+            Add(WindowsServer.Create2003(Edition.SmallBusiness));
+            Add(WindowsServer.Create2003(Edition.StorageServer));
+
+            Add(WindowsServer.Create2003R2(null));
+            Add(WindowsServer.Create2003R2(Edition.Web));
+            Add(WindowsServer.Create2003R2(Edition.Standard));
+            Add(WindowsServer.Create2003R2(Edition.Enterprise));
+            Add(WindowsServer.Create2003R2(Edition.Datacenter));
+            Add(WindowsServer.Create2003R2(Edition.ComputeCluster));
+            Add(WindowsServer.Create2003R2(Edition.SmallBusiness));
+            Add(WindowsServer.Create2003R2(Edition.StorageServer));
+
+            Add(WindowsServer.Create2008(null));
+            Add(WindowsServer.Create2008(Edition.Standard));
+            Add(WindowsServer.Create2008(Edition.Enterprise));
+            Add(WindowsServer.Create2008(Edition.Datacenter));
+            Add(WindowsServer.Create2008(Edition.Web));
+            Add(WindowsServer.Create2008(Edition.StorageServer));
+            Add(WindowsServer.Create2008(Edition.SmallBusiness));
+            Add(WindowsServer.Create2008(Edition.Foundation));
+
+            Add(WindowsServer.Create2008R2(null));
+            Add(WindowsServer.Create2008R2(Edition.Web));
+            Add(WindowsServer.Create2008R2(Edition.Foundation));
+            Add(WindowsServer.Create2008R2(Edition.Standard));
+            Add(WindowsServer.Create2008R2(Edition.Enterprise));
+            Add(WindowsServer.Create2008R2(Edition.Datacenter));
+
+            Add(WindowsServer.Create2012(null));
+            Add(WindowsServer.Create2012(Edition.Foundation));
+            Add(WindowsServer.Create2012(Edition.Essentials));
+            Add(WindowsServer.Create2012(Edition.Standard));
+            Add(WindowsServer.Create2012(Edition.Datacenter));
+
+            Add(WindowsServer.Create2012R2(null));
+            Add(WindowsServer.Create2012R2(Edition.Essentials));
+            Add(WindowsServer.Create2012R2(Edition.Standard));
+            Add(WindowsServer.Create2012R2(Edition.Datacenter));
+
+            Add(WindowsServer.Create2016(null));
+            Add(WindowsServer.Create2016(Edition.Essentials));
+            Add(WindowsServer.Create2016(Edition.Standard));
+            Add(WindowsServer.Create2016(Edition.Datacenter));
+
+            Add(WindowsServer.Create2019(null));
+            Add(WindowsServer.Create2019(Edition.Essentials));
+            Add(WindowsServer.Create2019(Edition.Standard));
+            Add(WindowsServer.Create2019(Edition.Datacenter));
+
         }
 
         #endregion
