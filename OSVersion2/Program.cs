@@ -30,5 +30,10 @@ OSInfo _1703 = OSVersion.GetWindows("Creators Update");
 Console.WriteLine(_1703);
 OSInfo _1803 = OSVersion.GetWindows("1803");
 Console.WriteLine(_1803);
+OSInfo _2008R2 = OSVersion.GetWindowsServer("2008R2");
+Console.WriteLine(_2008R2);
+OSInfo _2019 = OSVersion.GetWindowsServer(1809);
+Console.WriteLine(_2019);
+
 
 Console.ReadLine();

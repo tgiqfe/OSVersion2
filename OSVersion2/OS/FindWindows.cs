@@ -66,9 +66,7 @@ namespace OSVersion2.OS.Windows
 
         #endregion
 
-        private static OSInfoCollection _collection = null;
-
-        public static OSInfo GetCurrent()
+        public static OSInfo GetCurrent(OSInfoCollection collection)
         {
             var mo = new ManagementClass("Win32_OperatingSystem").
                 GetInstances().
@@ -78,14 +76,18 @@ namespace OSVersion2.OS.Windows
             string editionText = Regex.Replace(caption, @"Microsoft\sWindows\s\d+\s", "");
             Edition edition = Enum.TryParse(editionText, out Edition tempEdition) ? tempEdition : Edition.None;
 
+            collection ??= OSInfoCollection.Load();
             if (IsWindowsServer())
             {
                 //  Windows Serverのチェックをここで
+                return collection.
+                    Where(x => x.OSFamily == OSFamily.Windows).
+                    Where(x => x.IsServer).
+                    FirstOrDefault(x => x.Version == (mo["Version"]?.ToString() ?? ""));
             }
             else
-            {
-                _collection ??= OSInfoCollection.Load();
-                return _collection.
+            {   
+                return collection.
                     Where(x => x.OSFamily == OSFamily.Windows).
                     Where(x => !x.IsServer).
                     FirstOrDefault(x => x.Version == (mo["Version"]?.ToString() ?? ""));
@@ -113,7 +115,6 @@ namespace OSVersion2.OS.Windows
 
                 //  Embeddedの判定をこのあたりで
             };
-            return null;
         }
     }
 }

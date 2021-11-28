@@ -15,5 +15,13 @@ namespace OSVersion2.OS.Windows
         Standard = 101,
         Datacenter = 102,
         Essentials = 103,
+        Professional = 104,
+        Server = 105,
+        AdvancedServer = 106,
+        DatacenterServer = 107,
+        Web = 108,
+        ComputeCluster = 109,
+        SmallBusiness = 110,
+        StorageServer = 111,
     }
 }

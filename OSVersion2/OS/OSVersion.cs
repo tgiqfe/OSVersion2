@@ -20,9 +20,11 @@ namespace OSVersion2.OS
         /// <returns></returns>
         public static OSInfo GetCurrent()
         {
+            _collection ??= OSInfoCollection.Load();
+
             if (OperatingSystem.IsWindows())
             {
-                return FindWindows.GetCurrent();
+                return FindWindows.GetCurrent(_collection);
             }
             else if (OperatingSystem.IsMacOS())
             {
@@ -44,7 +46,11 @@ namespace OSVersion2.OS
 
             var windowsCollection = _collection.Where(x => x.OSFamily == OSFamily.Windows).Where(x => !x.IsServer);
             OSInfo result = windowsCollection.FirstOrDefault(x => x.Serial == versionSerial);
-            if (result != null) { result.Edition = Edition.None; }
+            if (result is not null)
+            {
+                result.Edition = null;
+                result.EndSupportDate = null;
+            }
 
             return result;
         }
@@ -64,7 +70,50 @@ namespace OSVersion2.OS
                 windowsCollection.FirstOrDefault(x => x.Alias.Any(y => y.Equals(versionName, StringComparison.OrdinalIgnoreCase))) ??
                 windowsCollection.FirstOrDefault(x => x.Version.Equals(versionName)) ??
                 windowsCollection.FirstOrDefault(x => x.BuildVersion.Equals(versionName));
-            if (result != null) { result.Edition = Edition.None; }
+            if (result is not null)
+            {
+                result.Edition = null;
+                result.EndSupportDate = null;
+            }
+
+            return result;
+        }
+
+        public static OSInfo GetWindowsServer(int versionSerial)
+        {
+            _collection ??= OSInfoCollection.Load();
+
+            var winSVCollection = _collection.Where(x => x.OSFamily == OSFamily.Windows).Where(x => x.IsServer);
+            OSInfo result = winSVCollection.FirstOrDefault(x => x.Serial == versionSerial);
+            if (result is not null)
+            {
+                result.Edition = null;
+                result.EndSupportDate = null;
+            }
+
+            return result;
+        }
+
+        public static OSInfo GetWindowsServer(string versionName)
+        {
+            if (int.TryParse(versionName, out int tempInt))
+            {
+                return GetWindows(tempInt);
+            }
+
+            _collection ??= OSInfoCollection.Load();
+
+            var winSVCollection = _collection.Where(x => x.OSFamily == OSFamily.Windows).Where(x => x.IsServer);
+            OSInfo result =
+                winSVCollection.FirstOrDefault(x => x.VersionName.Equals(versionName, StringComparison.OrdinalIgnoreCase)) ??
+                winSVCollection.FirstOrDefault(x => x.Alias.Any(y => y.Equals(versionName, StringComparison.OrdinalIgnoreCase))) ??
+                winSVCollection.FirstOrDefault(x => x.Version.Equals(versionName)) ??
+                winSVCollection.FirstOrDefault(x => x.BuildVersion.Equals(versionName));
+            if (result is not null)
+            {
+                result.Edition = null;
+                result.EndSupportDate = null;
+            }
 
             return result;
         }
